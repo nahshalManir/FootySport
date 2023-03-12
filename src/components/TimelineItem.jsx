@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, TableCell } from '@mui/material';
-import { grey, indigo, amber, yellow, red } from '@mui/material/colors';
+import { grey, indigo, yellow, red } from '@mui/material/colors';
 import RectangleRoundedIcon from '@mui/icons-material/RectangleRounded';
 import SportsSoccerTwoToneIcon from '@mui/icons-material/SportsSoccerTwoTone';
 import ClearIcon from '@mui/icons-material/Clear';

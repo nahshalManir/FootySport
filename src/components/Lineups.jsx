@@ -1,10 +1,9 @@
 import React from 'react';
-import { Box, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, IconButton, useTheme, useMediaQuery } from '@mui/material';
+import { Box, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, useTheme } from '@mui/material';
 import { grey } from "@mui/material/colors";
 
 const Lineups = (props) => {
   const theme = useTheme();
-  const downSm = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <TableContainer>

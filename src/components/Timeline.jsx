@@ -4,7 +4,6 @@ import TimelineItem from './TimelineItem';
 
 const Timeline = (props) => {
   const theme = useTheme();
-  const downSm = useMediaQuery(theme.breakpoints.down('sm'));
 
   const incidentMap = {
     36: 'Goal',

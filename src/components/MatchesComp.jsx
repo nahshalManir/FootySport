@@ -11,7 +11,6 @@ import Loader from './Loader';
 
 
 const compIds = ["75", "77", "68", "65", "67", '60', '36'];
-const countryNames = ["England", "Spain", "France", "Italy", "Germany", "Champions League", "Europa League"];
 
 export default function MatchesComp() {
   const [dateValue, setDateValue] = useState(new Date());

@@ -2,7 +2,6 @@ import React from 'react';
 import logo from '../img/footysport-high-resolution-color-logo-1.png';
 import { Box, Typography } from '@mui/material';
 import { indigo } from '@mui/material/colors';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import CopyrightIcon from '@mui/icons-material/Copyright';
 
 const Footer = () => {

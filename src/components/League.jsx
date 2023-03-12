@@ -54,7 +54,8 @@ const League = () => {
   const location = useLocation();
   useEffect(() => {
     country === 'europe' ? updateEuropeLeague() : updateNormalLeague();
-  }, [location])
+  }, [location.pathname]) // eslint-disable-line react-hooks/exhaustive-deps
+
 
   return (
     <>

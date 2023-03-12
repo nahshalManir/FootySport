@@ -55,7 +55,8 @@ const MatchData = () => {
 
   useEffect(() => {
     updateMatchDetails();
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
 
   return (
     <>

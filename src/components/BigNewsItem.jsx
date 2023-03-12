@@ -4,14 +4,13 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Box, Modal, Fade, Backdrop, useTheme, useMediaQuery } from '@mui/material';
+import { Box, Modal, Fade, Backdrop } from '@mui/material';
 import { grey } from '@mui/material/colors';
 
 const BigNewsItem = (props) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const theme = useTheme();
 
   return (
     <>

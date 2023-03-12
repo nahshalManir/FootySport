@@ -27,7 +27,8 @@ const NewsComp = (props) => {
 
   useEffect(() => {
     updateNews();
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
 
   return (
     <>

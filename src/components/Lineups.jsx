@@ -1,9 +1,8 @@
 import React from 'react';
-import { Box, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, useTheme } from '@mui/material';
+import { Box, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import { grey } from "@mui/material/colors";
 
 const Lineups = (props) => {
-  const theme = useTheme();
 
   return (
     <TableContainer>

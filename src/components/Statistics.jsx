@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import { Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material';
 import { indigo } from "@mui/material/colors";
 
 const Statistics = ((props) => {

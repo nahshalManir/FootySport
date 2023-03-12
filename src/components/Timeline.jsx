@@ -1,9 +1,8 @@
-import { Table, TableBody, TableRow, useTheme, useMediaQuery } from '@mui/material';
+import { Table, TableBody, TableRow } from '@mui/material';
 import React from 'react';
 import TimelineItem from './TimelineItem';
 
 const Timeline = (props) => {
-  const theme = useTheme();
 
   const incidentMap = {
     36: 'Goal',

@@ -21,7 +21,7 @@ export default function MatchesComp() {
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': '49e442de95mshc0a2d53e7e9181cp175d85jsnf7691a0e4630',
+        'X-RapidAPI-Key': process.env.REACT_APP_API_KEY_1,
         'X-RapidAPI-Host': 'livescore6.p.rapidapi.com'
       }
     };

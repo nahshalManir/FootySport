@@ -4,16 +4,13 @@ import { useParams, useLocation } from 'react-router-dom';
 import { Box } from '@mui/material';
 import LeagueTable from './LeagueTable';
 import EuropeLeagueTable from './EuropeLeagueTable';
-import lsLeague from './lsLeagueTable.json';
-import uclLeagueData from './lsUelLeagueData.json';
-import uclTable from './uelLeagueTable.json';
 import Loader from './Loader';
 
 const League = () => {
-  const [leagueData, setLeagueData] = useState(lsLeague);
-  const [europeTables, setEuropeTables] = useState(uclTable);
-  const [europePlayoffs, setEuropePlayoffs] = useState(uclLeagueData);
-  const [loading, setLoading] = useState(false);
+  const [leagueData, setLeagueData] = useState({});
+  const [europeTables, setEuropeTables] = useState({});
+  const [europePlayoffs, setEuropePlayoffs] = useState({});
+  const [loading, setLoading] = useState(true);
   const { country } = useParams();
   const { league } = useParams();
 

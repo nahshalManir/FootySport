@@ -12,7 +12,6 @@ const BigNewsItem = (props) => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const theme = useTheme();
-  const isLg = useMediaQuery(theme.breakpoints.up('xl'));
 
   return (
     <>

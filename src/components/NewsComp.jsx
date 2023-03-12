@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react';
 import BigNewsItem from './BigNewsItem';
 import SmallNewsItem from './SmallNewsItem';
 import { Box, Typography } from '@mui/material';
-import newsDataimp from './newData.json';
 import { grey } from '@mui/material/colors';
 
 const NewsComp = (props) => {
-  const [newsData, setNewsData] = useState(newsDataimp.data);
+  const [newsData, setNewsData] = useState({});
   const [loading, setLoading] = useState(true);
 
   const updateNews = async () => {

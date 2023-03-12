@@ -28,7 +28,8 @@ export default function ButtonAppBar() {
     else if (path === '/germany/bundesliga') setValue(5);
     else if (path === '/france/ligue-1') setValue(6);
     else if (path === '/italy/serie-a') setValue(7);
-  }, [path])
+  }, [path]) // eslint-disable-line react-hooks/exhaustive-deps
+
 
 
 

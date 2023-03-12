@@ -19,7 +19,6 @@ function App() {
         <Route exact path='/' element={<Home/>}/>
         <Route exact path="/:matchId" element={<MatchData />} />
         <Route exact path="/:country/:league" element={<League/>} />
-        <Route exact path="/:league" element={<League/>} />
       </Routes>
       <Footer/>
     </Router>

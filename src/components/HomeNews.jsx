@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import HomeNewsItem from './HomeNewsItem.jsx';
-import Loader from './Loader';
 
 const HomeNews = () => {
   const [newsData, setNewsData] = useState({});
@@ -31,7 +30,7 @@ const HomeNews = () => {
 
   return (
     <>
-    {loading ? <Loader sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '600px'}} /> : 
+    {loading ? <></> : 
       <Box sx={{ width: { xs: '100%', lg: '30%' }, marginY: { xs: '10px', lg: 0 } }}>
         <Box sx={{ height: '600px', boxShadow: 2, border: 0, borderTopLeftRadius: '8px', borderTopRightRadius: '8px', display: 'flex', flexDirection: 'column', marginY: { xs: '20px', sm: '40px', lg: 0 } }}>
           <Box sx={{ display: 'flex', alignItems: 'center', borderBottom: '2px solid lightgrey', paddingY: { xs: '4px' } }}>

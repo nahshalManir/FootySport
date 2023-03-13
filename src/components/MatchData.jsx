@@ -60,7 +60,7 @@ const MatchData = () => {
 
   return (
     <>
-    {loading ? <Loader sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '700px'}}/> :
+    {loading ? <Loader sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '600px'}}/> :
     <Box sx={{ width: { xs: '95%' }, maxWidth: { xl: '1250px', lg: '1000px', md: '800px', xs: '575px' }, alignItems: 'center', boxShadow: 2, justifyContent: 'center', marginY: 4, marginX: 'auto' }} >
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
         <Typography sx={{ animation: matchData.Eps !== 'FT' && 'pulsate-transparent 1.5s ease-out infinite', fontSize: { xs: '1rem', md: '1.25rem' }, marginTop: {xs: '4px', md: '8px'} }}>

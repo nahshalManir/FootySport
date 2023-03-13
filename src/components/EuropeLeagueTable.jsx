@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Box, Typography, TableCell, TableRow, Table, TableContainer, TableBody, useMediaQuery, useTheme, TableHead, Tooltip } from '@mui/material';
 import { grey } from '@mui/material/colors';
 import Playoffs from './Playoffs';
+import Loader from './Loader';
 
 
 const teamQual = {
@@ -30,12 +32,43 @@ function editAndCapitalize(str) {
 }
 
 const EuropeLeagueTable = (props) => {
+  const [europeTables, setEuropeTables] = useState({});
+  const [europePlayoffs, setEuropePlayoffs] = useState({});
+  const [loading, setLoading] = useState(true);
+  
   const theme = useTheme();
   const downSm = useMediaQuery(theme.breakpoints.down('sm'));
   const downMd = useMediaQuery(theme.breakpoints.down('md'));
   const downXl = useMediaQuery(theme.breakpoints.down('xl'));
 
+  const updateLeague = async () => {
+    const options = {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Key': process.env.REACT_APP_API_KEY_7,
+        'X-RapidAPI-Host': 'livescore6.p.rapidapi.com'
+      }
+    };
+
+    setLoading(true);
+    const data = await Promise.all([
+      fetch(`https://livescore6.p.rapidapi.com/competitions/get-table?CompId=${props.league === 'uefa-champions-league' ? 60 : 36}`, options).then(response => response.json()),
+      fetch(`https://livescore6.p.rapidapi.com/matches/v2/list-by-league?Category=soccer&Ccd=${props.league.replace(/uefa-/, '')}&Timezone=5.5`, options).then(response => response.json())
+    ])
+
+    setEuropeTables(data[0]);
+    setEuropePlayoffs(data[1]);
+    setLoading(false);
+  }
+
+  const location = useLocation();
+  useEffect(() => {
+    updateLeague();
+  }, [location.pathname]) // eslint-disable-line react-hooks/exhaustive-deps
+
   return (
+    <>
+    {loading ? <Loader sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '600px'}}/> : 
     <Box sx={{ display: 'flex', flexDirection: downXl ? 'column' : 'row', justifyContent: 'space-between', width: '100%', marginY: {xs: '20px', md: '40px'} }}>
       <Box sx={{ width: { xs: '100%', xl: '47.5%' }, display: 'flex', flexDirection: 'column', boxShadow: 1, marginBottom: { xs: '20px', md: '40px' }, borderRadius: '8px' }}>
         <Box sx={{ display: 'flex', paddingY: { xs: '4px', md: '10px' }, borderBottom: 0.5, alignItems: 'center' }}>
@@ -57,7 +90,7 @@ const EuropeLeagueTable = (props) => {
           </Typography>
         </Box>
         <Box>
-          {props.tables.Stages.map(group => (
+          {europeTables.Stages.map(group => (
             <Box key={group.Sid} sx={{ display: 'flex', flexDirection: 'column', marginY: { xs: '8px', md: '8px' }, boxShadow: 1 }}>
               <Typography sx={{ fontSize: { xs: '0.9rem', md: '1.2rem' }, paddingY: { xs: '6px', md: '10px' }, paddingX: { xs: '4px', md: '8px' } }}>
                 {group.Snm}
@@ -79,7 +112,7 @@ const EuropeLeagueTable = (props) => {
                   <TableBody>
                     {group.LeagueTable.L[0].Tables[0].team.map(row => (
                       <TableRow
-                        key={row.Tid}>
+                      key={row.Tid}>
                         <TableCell sx={{ paddingX: { xs: '8px' } }}>
                           <Tooltip title={row?.phr !== undefined && teamQual[row.phr[0]].qual} placement='right'>
                             <Typography sx={{ width: 'fit-content', paddingX: '6px', borderRadius: '6px', bgcolor: (row?.phr !== undefined && teamQual[row.phr[0]].bgCol), color: row?.phr !== undefined && 'white', fontSize: { xs: '0.75rem', md: '1rem' } }} >
@@ -139,9 +172,10 @@ const EuropeLeagueTable = (props) => {
         </Box>
       </Box>
       <Box sx={{ width: { xs: '100%', xl: '47.5%' } }}>
-        <Playoffs playoffs={props.playoffs} />
+        <Playoffs playoffs={europePlayoffs.Stages.filter(stage => stage.Snm.slice(0, 13) !== 'Qualification' && stage.Snm.slice(0, 5) !== 'Group')} />
       </Box>
-    </Box>
+    </Box>}
+  </>
   )
 }
 

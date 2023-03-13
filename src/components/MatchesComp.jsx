@@ -41,7 +41,7 @@ export default function MatchesComp() {
 
   return (
     <>
-    {loading ? <Loader sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', width: { xs: '100%', lg: '65%' }}}/> : 
+    {loading ? <Loader sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '600px', position: 'relative', bottom: '50px'}}/> : 
     <Box sx={{ width: { xs: '100%', lg: '65%' }, height: '600px', boxShadow: 2, border: 0, borderTopLeftRadius: 14, borderTopRightRadius: 14, display: 'flex', flexDirection: 'column', marginY: { xs: '10px', lg: 0 } }}>
       <Box sx={{ display: 'flex', alignItems: 'center', borderBottom: '2px solid lightgrey', "& div.MuiToolbar-root": { paddingX: 1, paddingY: 1 } }}>
         <Typography sx={{ fontSize: { xs: '1.25rem', md: '2rem' }, marginX: { xs: '10px', sm: '20px' } }}>

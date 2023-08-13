@@ -50,7 +50,7 @@ export default function ButtonAppBar() {
                 <Tab sx={{ textTransform: 'none' }} disableRipple={true} label='UCL' to='/europe/uefa-champions-league' component={Link} />
                 <Tab sx={{ textTransform: 'none' }} disableRipple={true} label='UEL' to='/europe/uefa-europa-league' component={Link} />
                 <Tab sx={{ textTransform: 'none' }} disableRipple={true} label='Premier League' to='/england/premier-league' component={Link} />
-                <Tab sx={{ textTransform: 'none' }} disableRipple={true} label='Laliga' to='spain/laliga-santander' component={Link} />
+                <Tab sx={{ textTransform: 'none' }} disableRipple={true} label='Laliga' to='spain/laliga' component={Link} />
                 <Tab sx={{ textTransform: 'none' }} disableRipple={true} label='Bundesliga' to='/germany/bundesliga' component={Link} />
                 <Tab sx={{ textTransform: 'none' }} disableRipple={true} label='Ligue 1' to='/france/ligue-1' component={Link} />
                 <Tab sx={{ textTransform: 'none' }} disableRipple={true} label='Serie A' to='/italy/serie-a' component={Link} />

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Drawer, List, ListItemButton, ListItemIcon, ListItemText, IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
@@ -8,7 +8,7 @@ const Hamburger = () => {
 
   return (
     <>
-      <Drawer sx={{color: 'red'}} anchor='right' open={openDrawer} onClose={() => setOpenDrawer(false)}>
+      <Drawer sx={{ color: 'red' }} anchor='right' open={openDrawer} onClose={() => setOpenDrawer(false)}>
         <List>
           <ListItemButton component={Link} to='/' onClick={() => setOpenDrawer(false)}>
             <ListItemIcon>
@@ -38,7 +38,7 @@ const Hamburger = () => {
               </ListItemText>
             </ListItemIcon>
           </ListItemButton>
-          <ListItemButton component={Link} to='/spain/laliga-santander' onClick={() => setOpenDrawer(false)}>
+          <ListItemButton component={Link} to='/spain/laliga' onClick={() => setOpenDrawer(false)}>
             <ListItemIcon>
               <ListItemText>
                 Laliga
@@ -68,8 +68,8 @@ const Hamburger = () => {
           </ListItemButton>
         </List>
       </Drawer>
-      <IconButton  onClick={() => setOpenDrawer(!openDrawer)}>
-        <MenuIcon sx={{color: 'white'}}/>
+      <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
+        <MenuIcon sx={{ color: 'white' }} />
       </IconButton>
     </>
   )
